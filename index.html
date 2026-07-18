@@ -34,12 +34,13 @@
     ══════════════════════════════════════ */
     .hero-section {
       position: relative;
-      min-height: 100vh;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding-top: 14rem;
+      padding-top: 9rem;
+      padding-bottom: 3.5rem;
     }
 
     /* Light background */
@@ -73,36 +74,6 @@
       width: 220px;
       height: 220px;
     }
-
-    /* Outer slow-pulsing glow ring */
-    .hero-photo-frame::after {
-      content: '';
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      background: conic-gradient(
-        rgba(11,77,61,0.35) 0deg,
-        rgba(139,58,42,0.25) 120deg,
-        rgba(11,77,61,0.35) 240deg,
-        rgba(11,77,61,0.15) 360deg
-      );
-      border-radius: 50%;
-      animation: rotateConic 8s linear infinite;
-      filter: blur(10px);
-    }
-
-    /* Spinning dashed border */
-    .hero-photo-frame::before {
-      content: '';
-      position: absolute;
-      inset: -5px;
-      border-radius: 50%;
-      border: 1.5px dashed rgba(139,58,42,0.35);
-      animation: spinRing 20s linear infinite;
-    }
-
-    @keyframes spinRing    { to { transform: rotate(360deg); } }
-    @keyframes rotateConic { to { transform: rotate(360deg); } }
 
     .hero-photo-frame img {
       width: 220px;
@@ -296,14 +267,13 @@
 
     /* ── Scroll cue ── */
     .scroll-cue {
-      position: absolute;
-      bottom: 2rem; left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.4rem;
+      margin: 2.5rem auto 0;
       opacity: 0;
       animation: fadeIn 1s ease 1.4s both;
     }
